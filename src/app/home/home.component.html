@@ -1,0 +1,68 @@
+<div id="top">
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Company List</h3>
+                    <ul class="list">
+                        <cdk-virtual-scroll-viewport style="height: 500px" itemSize="90">
+                            <ng-container *cdkVirtualFor="let symbol of symbol">
+                                <li> {{symbol.name}} </li>
+                            </ng-container>
+                        </cdk-virtual-scroll-viewport>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Stock Price Chart</h3>
+                    <div>
+                        <p>{{date}}</p>
+                        <canvas baseChart [chartType]="'line'" [labels]="labels" [datasets]="datasets" [options]="options">
+
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+
+                    <h4>Company Details</h4><br>
+                    <p>
+                        <b>Company Name </b>{{company.companyname}}
+                    </p>
+                    <p>
+                        <b>Description </b> {{company.description}}
+                    </p>
+                    <p>
+                        <b>Exchange </b> {{company.exchange}}
+                    </p>
+                    <p>
+                        <b>Industry </b> {{company.industry}}
+                    </p>
+                    <p>
+                        <b>IssueType </b> {{company.issueType}}
+                    </p>
+                    <p>
+                        <b>Sector </b> {{company.sector}}
+                    </p>
+                    <p>
+                        <b>Symbol </b> {{company.symbol}}
+                    </p>
+                    <p>
+                        <b>Website </b> {{company.website}}
+                    </p>
+                    <p>
+                        <b>CEO </b> {{company.ceo}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
